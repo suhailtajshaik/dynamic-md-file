@@ -3,6 +3,7 @@ import React from 'react';
 import MarkdownRenderer from './components/MarkdownRenderer';
 
 const filePath = "./src/Docs/example.md";
+// const DateFormatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
 
 const App = () => {
   const ENV = { 
@@ -12,7 +13,7 @@ const App = () => {
       "example": "This is an example code block."
     }`,
     MDENV_JSON_SCHEMA: `{
-      "date": ${new Date}
+      "date": ${new Date().toLocaleString('en-US', { timeZoneName: 'short' })}
     }`
   };
 
